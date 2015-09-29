@@ -40,15 +40,7 @@ None
 
 # Attributes #
 
-The following attributes are defined in attributes/default.rb of the common cookbook, but are documented here due to their relevance:
-
-* `openstack["endpoints"]["db"]["host"]` - The IP address to bind the database service to
-* `openstack["endpoints"]["db"]["scheme"]` - Unused at this time
-* `openstack["endpoints"]["db"]["port"]` - The port to bind the database service to
-* `openstack["endpoints"]["db"]["path"]` - Unused at this time
-* `openstack["endpoints"]["db"]["bind_interface"]` - The interface name to bind the database service to
-* `openstack["db"]["root_user_key"]` - The key used to retrieve the root user password; the key is both the name of the data-bag item and
-  name of the key containing the password value within the data-bag item. This is defined in Common.
+See attributes/default.rb
 
 Testing
 =====
