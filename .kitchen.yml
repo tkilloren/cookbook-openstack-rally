@@ -1,0 +1,29 @@
+---
+driver:
+  openstack_username: <%= ENV['OS_USERNAME'] %>
+  openstack_api_key: <%= ENV['OS_PASSWORD'] %>
+  openstack_auth_url: <%= ENV['OS_AUTH_URL'] %>
+  key_name: <%= ENV['KEY_NAME'] %>
+  openstack_tenant: <%= ENV['OS_TENANT_NAME'] %>
+  floating_ip_pool: <%= ENV['FLOATING_IP_POOL'] %>
+  private_key_path: <%= ENV['SSH_KEY_FILE'] %>
+  require_chef_omnibus: true
+#  require_chef_omnibus: latest
+
+provisioner:
+  name: chef_zero
+  chef_omnibus_url: http://www.getchef.com/chef/install.sh
+
+platforms:
+
+- name: rhel7-vagrant
+  driver:
+    name: vagrant
+    box:  rhel7.1
+    box_url: http://tteoscore1-rgw-vip.target.com/swift/v1/vagrant_boxes/rhel-guest-image-7.1-20150224.0.x86_64.box
+
+suites:
+  - name: default
+    run_list:
+#      - recipe[rhn]
+      - recipe[openstack-rally::default]
