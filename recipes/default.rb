@@ -44,38 +44,38 @@
 #  end
 #end
 
-case node['platform_family']
-when 'debian'
-  include_recipe 'apt::default'
-when 'rhel'
-  include_recipe 'yum::default'
-
-  yum_repository 'rhel7-2015r1-tgt' do
-    description 'Enterprise base'
-    baseurl 'http://10.63.216.186:8000/rhel7-2015r1-tgt/'
-    gpgcheck false
-    action :create
-  end
-
-  yum_repository 'rhel7-ha-2015r1-tgt' do
-    description 'Enterprise HA addon'
-    baseurl 'http://10.63.216.186:8000/rhel7-ha-2015r1-tgt/'
-    gpgcheck false
-    action :create
-  end
-
-  yum_repository 'rhel7-ost6-2015r1-tgt' do
-    description 'Enterprise OpenStack (juno)'
-    baseurl 'http://10.63.216.186:8000/rhel7-ost6-2015r1-tgt/'
-    gpgcheck false
-    action :create
-  end
-
+#case node['platform_family']
+#when 'debian'
+#  include_recipe 'apt::default'
+#when 'rhel'
+#  include_recipe 'yum::default'
+#
+#  yum_repository 'rhel7-2015r1-tgt' do
+#    description 'Enterprise base'
+#    baseurl 'http://10.63.216.186:8000/rhel7-2015r1-tgt/'
+#    gpgcheck false
+#    action :create
+#  end
+#
+#  yum_repository 'rhel7-ha-2015r1-tgt' do
+#    description 'Enterprise HA addon'
+#    baseurl 'http://10.63.216.186:8000/rhel7-ha-2015r1-tgt/'
+#    gpgcheck false
+#    action :create
+#  end
+#
+#  yum_repository 'rhel7-ost6-2015r1-tgt' do
+#    description 'Enterprise OpenStack (juno)'
+#    baseurl 'http://10.63.216.186:8000/rhel7-ost6-2015r1-tgt/'
+#    gpgcheck false
+#    action :create
+#  end
+#
   include_recipe 'yum-epel'
-end
+#end
 
 # Install Rally prerequisite packages
-%w(gcc libffi-devel python-devel openssl-devel gmp-devel libxml2-devel libxslt-devel postgresql-devel git wget python-pip).each do |pkg|
+%w(gcc libffi-devel python-devel openssl-devel gmp-devel libxml2-devel libxslt-devel postgresql-devel git wget python-pip redhat-rpm-config).each do |pkg|
   yum_package pkg do
     action :install
   end

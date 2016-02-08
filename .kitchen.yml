@@ -16,11 +16,17 @@ provisioner:
 
 platforms:
 
-- name: rhel7-vagrant
+#- name: rhel7-vagrant
+#  driver:
+#    name: vagrant
+#    box:  rhel7.1
+#    box_url: http://tteoscore1-rgw-vip.target.com/swift/v1/vagrant_boxes/rhel-guest-image-7.1-20150224.0.x86_64.box
+
+- name: centos7-vagrant
   driver:
     name: vagrant
-    box:  rhel7.1
-    box_url: http://tteoscore1-rgw-vip.target.com/swift/v1/vagrant_boxes/rhel-guest-image-7.1-20150224.0.x86_64.box
+    box:  centos7.1
+    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-7.1_chef-provisionerless.box
 
 suites:
   - name: default
