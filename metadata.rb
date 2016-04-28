@@ -1,5 +1,5 @@
 name             'openstack-rally'
-maintainer       'Target'
+maintainer       'Travis Killoren'
 maintainer_email 'tkilloren@gmail.com'
 license          'All rights reserved'
 description      'Installs/Configures rally'

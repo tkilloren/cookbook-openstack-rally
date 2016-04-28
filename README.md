@@ -62,9 +62,9 @@ License and Author
 
 |                      |                                                    |
 |:---------------------|:---------------------------------------------------|
-| **Author**           |  Travis Killoren (<Travis.Killoren@target.com>)    |
+| **Author**           |  Travis Killoren (<TKilloren@gmail.com>)           |
 |                      |                                                    |
-| **Copyright**        |  Copyright (c) 2015, Target                        |
+| **Copyright**        |  Copyright (c) 2015, Travis Killoren               |
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
